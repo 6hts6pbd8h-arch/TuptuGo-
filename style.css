@@ -1,3 +1,7 @@
+/* =========================
+   TuptuGo Hero v2
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -5,152 +9,314 @@
 }
 
 body{
-    font-family:Inter, Arial, Helvetica, sans-serif;
+
+    font-family:Inter,Arial,sans-serif;
+
     background:#F7F4EE;
-    color:#24352E;
+
+    color:#23362F;
+
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
 }
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:30px 60px;
-}
 
-.logo{
-    font-size:38px;
-    font-weight:800;
-    color:#0F766E;
-    letter-spacing:-1px;
-}
-
-nav{
-    display:flex;
-    gap:35px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#2F3B35;
-    font-weight:600;
-}
-
-.hero{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    width:100%;
 
     max-width:1400px;
 
     margin:auto;
 
-    padding:70px 60px;
-
-    gap:120px;
-
-}
-}
-
-.hero-text{
-
-    max-width:560px;
-
-}
-
-.hero-text h1{
-    font-size:58px;
-    margin-bottom:25px;
-}
-
-.hero-text p{
-    font-size:22px;
-    line-height:1.6;
-    margin-bottom:40px;
-}
-
-button{
-    background:#F48B73;
-    color:white;
-    border:none;
-    padding:18px 34px;
-    border-radius:999px;
-    font-size:18px;
-    font-weight:600;
-    cursor:pointer;
-}
-
-.hero-phone{
-    width:300px;
-    height:610px;
-
-    background:white;
-
-    border-radius:45px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.12);
-
-    border:10px solid #222;
+    padding:28px 60px;
 
     display:flex;
+
+    justify-content:space-between;
 
     align-items:center;
 
-    justify-content:center;
-
-    font-size:120px;
 }
-.phone-screen{
-    width:100%;
-    height:100%;
-    background:white;
-    border-radius:35px;
-    padding:24px;
+
+.logo{
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:#0F766E;
+
+    letter-spacing:-1px;
+
+}
+
+nav{
+
     display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    font-weight:600;
+
+    color:#3F4D48;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#0F766E;
+
+}
+
+.hero{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    min-height:calc(100vh - 90px);
+
+    display:grid;
+
+    grid-template-columns:1fr 420px;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:30px 60px 80px;
+
+}
+
+.hero-left{
+
+    display:flex;
+
     flex-direction:column;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#E7F7F5;
+
+    color:#0F766E;
+
+    font-weight:700;
+
+    margin-bottom:30px;
+
+}
+
+.hero-left h1{
+
+    font-size:68px;
+
+    line-height:1.05;
+
+    margin-bottom:24px;
+
+    letter-spacing:-2px;
+
+}
+
+.hero-left p{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    color:#55645F;
+
+    max-width:620px;
+
+    margin-bottom:45px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
     gap:18px;
-    overflow:hidden;
+
+}
+
+#startBtn{
+
+    background:#F48B73;
+
+    color:white;
+
+    border:none;
+
+    padding:18px 34px;
+
+    border-radius:999px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#startBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(244,139,115,.35);
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    border:2px solid #D7DDD8;
+
+    padding:18px 34px;
+
+    border-radius:999px;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.secondary-btn:hover{
+
+    border-color:#0F766E;
+
+    color:#0F766E;
+
+}
+
+.hero-phone{
+
+    width:380px;
+
+    height:760px;
+
+    background:#222;
+
+    border-radius:48px;
+
+    padding:12px;
+
+    box-shadow:0 35px 80px rgba(0,0,0,.18);
+
+}
+
+.phone-screen{
+
+    width:100%;
+
+    height:100%;
+
+    background:white;
+
+    border-radius:38px;
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
 }
 
 .phone-header{
-    font-size:22px;
-    font-weight:700;
+
+    font-size:28px;
+
+    font-weight:800;
+
     color:#0F766E;
+
 }
 
 .search-box{
-    background:#F4F4F4;
+
+    background:#F3F4F6;
+
     border-radius:18px;
-    padding:14px 18px;
-    color:#666;
-    font-size:15px;
+
+    padding:16px 18px;
+
+    color:#7B7B7B;
+
 }
 
 .trip-card{
+
     background:#F8F5F0;
+
     border-radius:20px;
-    padding:18px 20px;
+
+    padding:18px;
 
     display:flex;
+
     flex-direction:column;
 
     gap:6px;
 
-    font-size:18px;
-    font-weight:600;
-
     transition:.25s;
+
 }
 
 .trip-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transform:translateY(-4px);
+
 }
+
+.trip-card strong{
+
+    font-size:18px;
+
 }
+
 .trip-card small{
+
+    color:#777;
+
     font-size:13px;
-    color:#7B7B7B;
-    font-weight:500;
-    line-height:1.4;
-}
+
 }
