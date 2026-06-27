@@ -5,9 +5,9 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#F8F5F0;
-    color:#2F3B35;
+    font-family:Inter, Arial, Helvetica, sans-serif;
+    background:#F7F4EE;
+    color:#24352E;
 }
 
 header{
@@ -18,9 +18,10 @@ header{
 }
 
 .logo{
-    font-size:34px;
-    font-weight:700;
-    color:#3E6A56;
+    font-size:38px;
+    font-weight:800;
+    color:#0F766E;
+    letter-spacing:-1px;
 }
 
 nav{
@@ -57,7 +58,7 @@ nav a{
 }
 
 button{
-    background:#F08B77;
+    background:#F48B73;
     color:white;
     border:none;
     padding:18px 34px;
