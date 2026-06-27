@@ -1,5 +1,7 @@
 const startBtn = document.getElementById("startBtn");
 
-startBtn.addEventListener("click", () => {
-    alert("🚀 Witaj w TuptuGo!\n\nTo dopiero początek naszej podróży.");
-});
+if (startBtn) {
+    startBtn.addEventListener("click", () => {
+        window.location.href = "dashboard.html";
+    });
+}
