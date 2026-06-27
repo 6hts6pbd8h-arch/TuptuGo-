@@ -36,14 +36,26 @@ nav a{
 }
 
 .hero{
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:80px 60px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:70px 60px;
+
+    gap:120px;
+
+}
 }
 
 .hero-text{
-    max-width:520px;
+
+    max-width:560px;
+
 }
 
 .hero-text h1{
@@ -69,8 +81,8 @@ button{
 }
 
 .hero-phone{
-    width:360px;
-    height:720px;
+    width:300px;
+    height:610px;
 
     background:white;
 
