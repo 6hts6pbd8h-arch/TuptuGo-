@@ -128,15 +128,29 @@ button{
 
 .trip-card{
     background:#F8F5F0;
-    border-radius:18px;
-    padding:18px;
+    border-radius:20px;
+    padding:18px 20px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:6px;
+
     font-size:18px;
     font-weight:600;
+
+    transition:.25s;
+}
+
+.trip-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
 }
 .trip-card small{
-    display:block;
-    margin-top:6px;
     font-size:13px;
-    color:#777;
-    font-weight:400;
+    color:#7B7B7B;
+    font-weight:500;
+    line-height:1.4;
+}
 }
