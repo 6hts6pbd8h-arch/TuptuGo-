@@ -11,9 +11,13 @@ console.log("TuptuGo uruchomione");
 const startBtn = document.getElementById("startBtn");
 
 if (startBtn) {
+
     startBtn.onclick = () => {
+
         location.href = "dashboard.html";
+
     };
+
 }
 
 // --------------------------
@@ -100,6 +104,7 @@ window.addEventListener("load", async () => {
 
     const weatherBox = document.getElementById("weather");
     const locationInfo = document.getElementById("locationInfo");
+    const mapElement = document.getElementById("map");
 
     const lat = localStorage.getItem("lat");
     const lon = localStorage.getItem("lon");
@@ -112,6 +117,21 @@ window.addEventListener("load", async () => {
             <br><br>
             🌍 ${lat || "-"}, ${lon || "-"}
         `;
+
+    }
+
+    if (mapElement && lat && lon && typeof L !== "undefined") {
+
+        const map = L.map("map").setView([lat, lon], 13);
+
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                attribution: "&copy; OpenStreetMap contributors"
+            }
+        ).addTo(map);
+
+        L.marker([lat, lon]).addTo(map);
 
     }
 
@@ -161,11 +181,16 @@ if (sendPrompt) {
 
         if (!prompt) return;
 
-        alert("AI MVP\n\n" + prompt);
+        alert(
+            "🚧 AI Planner jest jeszcze w budowie.\n\n" +
+            "Twoje zapytanie:\n\n" +
+            prompt
+        );
 
     };
 
 }
+
 // --------------------------
 // ENTER W AI
 // --------------------------
@@ -185,6 +210,7 @@ if (promptInput) {
     });
 
 }
+
 // --------------------------
 // AI BUTTON
 // --------------------------
