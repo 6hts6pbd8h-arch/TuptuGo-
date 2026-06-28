@@ -35,3 +35,16 @@ location.href="city.html";
 });
 
 }
+const sendPrompt=document.getElementById("sendPrompt");
+
+if(sendPrompt){
+
+sendPrompt.onclick=()=>{
+
+const prompt=document.getElementById("prompt").value;
+
+alert("AI otrzymało:\n\n"+prompt);
+
+}
+
+}
