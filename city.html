@@ -2,143 +2,167 @@
 <html lang="pl">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuptuGo - Miasto</title>
 
-<title>TuptuGo - Miasto</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
 
 <div class="city-page">
 
-<div class="city-hero">
+    <div class="city-hero">
 
-<img
-src="https://picsum.photos/1200/500?city"
-alt="Miasto">
+        <img src="https://picsum.photos/1200/700?city" alt="Miasto">
 
-<div class="city-overlay">
+        <div class="city-overlay">
 
-<h1 id="cityTitle">Warszawa</h1>
+            <h1 id="cityTitle">Warszawa</h1>
 
-<p>Stolica Polski • 4,9 ★</p>
+            <p>Zwiedzaj wygodniej z TuptuGo</p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div class="info-card">
+    <div class="city-content">
 
-<h2>🌤 Pogoda</h2>
+        <div class="info-card">
 
-<p id="weather">Ładowanie...</p>
+            <h2>🌤 Pogoda</h2>
 
-</div>
+            <p id="weather">Ładowanie...</p>
 
-<div class="info-card">
+        </div>
 
-<h2>📍 Lokalizacja</h2>
+        <div class="info-card">
 
-<p id="locationInfo">Ładowanie...</p>
+            <h2>📍 Lokalizacja</h2>
 
-</div>
+            <p id="locationInfo">Ładowanie...</p>
 
-<div class="info-card">
+        </div>
 
-<h2>🕒 Najlepszy czas</h2>
+        <div class="info-card">
 
-<p>09:00–20:00</p>
+            <h2>🕒 Najlepsza pora zwiedzania</h2>
 
-</div>
+            <p>09:00 - 20:00</p>
 
-<div class="info-card">
+        </div>
 
-<h2>💰 Budżet</h2>
+        <div class="info-card">
 
-<p>około 250 zł / dzień</p>
+            <h2>💰 Szacowany budżet</h2>
 
-</div>
+            <p>około 250 zł / dzień</p>
 
-<h2 class="section-title">
+        </div>
 
-Polecane miejsca
+        <h2 class="section-title">🗺️ Mapa</h2>
 
-</h2>
+        <div id="map"></div>
 
-<div class="places">
+        <h2 class="section-title">⭐ Polecane miejsca</h2>
 
-<div class="place-card">
+        <div class="places">
 
-<h3>🏛 Zamek Królewski</h3>
+            <div class="place-card">
 
-<p>Najbardziej znany zabytek Warszawy.</p>
+                <h3>🏛 Zamek Królewski</h3>
 
-</div>
+                <p>Najbardziej znany zabytek Warszawy.</p>
 
-<div class="place-card">
+                <button class="place-btn">❤️ Ulubione</button>
 
-<h3>🌳 Łazienki Królewskie</h3>
+            </div>
 
-<p>Idealne na spacer.</p>
+            <div class="place-card">
 
-</div>
+                <h3>🌳 Łazienki Królewskie</h3>
 
-<div class="place-card">
+                <p>Idealne miejsce na spacer.</p>
 
-<h3>🍽 Restauracje</h3>
+                <button class="place-btn">❤️ Ulubione</button>
 
-<p>248 polecanych lokali.</p>
+            </div>
 
-</div>
+            <div class="place-card">
 
-</div>
+                <h3>🍽 Restauracje</h3>
 
-<button class="ai-button">
+                <p>248 polecanych lokali.</p>
 
-🤖 Zaplanuj dzień z AI
+                <button class="place-btn">🍴 Zobacz</button>
 
-</button>
+            </div>
 
-</div>
+        </div>
+
+        <button class="ai-button">
+
+            🤖 Zaplanuj dzień z AI
+
+        </button>
+
+    </div>
 
 </div>
 
 <nav class="bottom-nav">
 
-<a href="dashboard.html">
-🏠
-<span>Start</span>
-</a>
+    <a href="dashboard.html">
 
-<a href="city.html" class="active">
-🗺️
-<span>Miasto</span>
-</a>
+        <span class="material-symbols-rounded">home</span>
 
-<a href="ai.html">
-🤖
-<span>AI</span>
-</a>
+        <span>Start</span>
 
-<a href="#">
-❤️
-<span>Ulubione</span>
-</a>
+    </a>
 
-<a href="#">
-👤
-<span>Profil</span>
-</a>
+    <a href="city.html" class="active">
+
+        <span class="material-symbols-rounded">travel_explore</span>
+
+        <span>Miasto</span>
+
+    </a>
+
+    <a href="ai.html">
+
+        <span class="material-symbols-rounded">auto_awesome</span>
+
+        <span>AI</span>
+
+    </a>
+
+    <a href="#">
+
+        <span class="material-symbols-rounded">favorite</span>
+
+        <span>Ulubione</span>
+
+    </a>
+
+    <a href="#">
+
+        <span class="material-symbols-rounded">person</span>
+
+        <span>Profil</span>
+
+    </a>
 
 </nav>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="app.js"></script>
 
 </body>
-
 </html>
