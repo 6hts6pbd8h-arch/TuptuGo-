@@ -157,3 +157,22 @@ if (sendPrompt) {
     };
 
 }
+// --------------------------
+// ENTER W AI
+// --------------------------
+
+const promptInput = document.getElementById("prompt");
+
+if (promptInput) {
+
+    promptInput.addEventListener("keydown", e => {
+
+        if (e.key === "Enter") {
+
+            sendPrompt.click();
+
+        }
+
+    });
+
+}
