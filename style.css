@@ -904,3 +904,171 @@ color:#0F766E;
 color:#0F766E;
 
 }
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+header{
+
+padding:20px;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav{
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+grid-template-columns:1fr;
+
+padding:20px;
+
+gap:40px;
+
+}
+
+.hero-left h1{
+
+font-size:46px;
+
+}
+
+.hero-left p{
+
+font-size:18px;
+
+}
+
+.hero-phone{
+
+width:100%;
+
+max-width:360px;
+
+height:700px;
+
+margin:auto;
+
+}
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.city-overlay h1{
+
+font-size:38px;
+
+}
+
+.chat-input{
+
+flex-direction:column;
+
+}
+
+.chat-input button{
+
+width:100%;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+header{
+
+padding:20px;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav{
+
+gap:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+grid-template-columns:1fr;
+
+padding:20px;
+
+gap:40px;
+
+}
+
+.hero-left h1{
+
+font-size:46px;
+
+}
+
+.hero-left p{
+
+font-size:18px;
+
+}
+
+.hero-phone{
+
+width:100%;
+
+max-width:360px;
+
+height:700px;
+
+margin:auto;
+
+}
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.city-overlay h1{
+
+font-size:38px;
+
+}
+
+.chat-input{
+
+flex-direction:column;
+
+}
+
+.chat-input button{
+
+width:100%;
+
+}
+
