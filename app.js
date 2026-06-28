@@ -1,24 +1,12 @@
 const startBtn = document.getElementById("startBtn");
 
-if (startBtn) {
-    startBtn.onclick = () => {
-        window.location.assign("./dashboard.html");
-    };
-}
+if(startBtn){
 
-const citySearch = document.getElementById("citySearch");
+    startBtn.onclick=()=>{
 
-if (citySearch) {
+        location.href="dashboard.html";
 
-    citySearch.addEventListener("keydown", (e) => {
-
-        if (e.key === "Enter") {
-
-            alert("Szukamy miasta: " + citySearch.value);
-
-        }
-
-    });
+    }
 
 }
 
@@ -26,8 +14,24 @@ document.querySelectorAll(".city-btn").forEach(btn=>{
 
     btn.onclick=()=>{
 
-        alert("Wybrano: "+btn.textContent);
+        location.href="city.html";
 
     }
 
 });
+
+const citySearch=document.getElementById("citySearch");
+
+if(citySearch){
+
+citySearch.addEventListener("keydown",e=>{
+
+if(e.key==="Enter"){
+
+location.href="city.html";
+
+}
+
+});
+
+}

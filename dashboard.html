@@ -1,104 +1,101 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TuptuGo - Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuptuGo - Dashboard</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="dashboard">
 
-    <header class="dashboard-header">
+<header class="dashboard-header">
 
-        <div>
-            <p>👋 Dzień dobry</p>
-            <h1>Dokąd dziś jedziemy?</h1>
-        </div>
+<div>
+<p>👋 Dzień dobry</p>
+<h1>Dokąd dziś jedziemy?</h1>
+</div>
 
-        <div class="avatar">
-            M
-        </div>
+<div class="avatar">M</div>
 
-    </header>
+</header>
 
-    <div class="search-dashboard">
+<div class="search-dashboard">
 
-        <input
-            type="text"
-            id="citySearch"
-            placeholder="🔍 Wpisz miasto..."
-        >
+<input
+type="text"
+id="citySearch"
+placeholder="🔍 Wpisz miasto...">
 
-    </div>
+</div>
 
-    <div class="quick-cities">
+<div class="quick-cities">
 
-        <button class="city-btn">Warszawa</button>
-        <button class="city-btn">Kraków</button>
-        <button class="city-btn">Gdańsk</button>
-        <button class="city-btn">Wrocław</button>
+<button class="city-btn" data-city="Warszawa">Warszawa</button>
+<button class="city-btn" data-city="Kraków">Kraków</button>
+<button class="city-btn" data-city="Gdańsk">Gdańsk</button>
+<button class="city-btn" data-city="Wrocław">Wrocław</button>
 
-    </div>
+</div>
 
-    <div class="dashboard-grid">
+<div class="dashboard-grid">
 
-        <a class="dashboard-card" href="#">
-            🗺️
-            <h3>Atrakcje</h3>
-            <p>Najciekawsze miejsca.</p>
-        </a>
+<a class="dashboard-card" href="city.html">
+🗺️
+<h3>Atrakcje</h3>
+<p>Najciekawsze miejsca.</p>
+</a>
 
-        <a class="dashboard-card" href="#">
-            🍽️
-            <h3>Restauracje</h3>
-            <p>Polecane lokale.</p>
-        </a>
+<a class="dashboard-card" href="city.html">
+🍽️
+<h3>Restauracje</h3>
+<p>Polecane lokale.</p>
+</a>
 
-        <a class="dashboard-card" href="#">
-            🏛️
-            <h3>Historia</h3>
-            <p>Poznaj miasto.</p>
-        </a>
+<a class="dashboard-card" href="city.html">
+🏛️
+<h3>Historia</h3>
+<p>Poznaj miasto.</p>
+</a>
 
-        <a class="dashboard-card" href="#">
-            🤖
-            <h3>AI Planner</h3>
-            <p>Zaplanuj wyjazd.</p>
-        </a>
+<a class="dashboard-card" href="#">
+🤖
+<h3>AI Planner</h3>
+<p>Już wkrótce.</p>
+</a>
 
-    </div>
+</div>
 
-    <section class="recent-section">
+<section class="recent-section">
 
-        <h2>Ostatnie podróże</h2>
+<h2>Ostatnie podróże</h2>
 
-        <div class="recent-grid">
+<div class="recent-grid">
 
-            <div class="recent-card">
-                <img src="https://picsum.photos/600/350?random=1">
-                <h3>Warszawa</h3>
-                <p>12 atrakcji • 248 restauracji</p>
-            </div>
+<div class="recent-card" onclick="location.href='city.html'">
+<img src="https://picsum.photos/600/350?1">
+<h3>Warszawa</h3>
+<p>12 atrakcji • 248 restauracji</p>
+</div>
 
-            <div class="recent-card">
-                <img src="https://picsum.photos/600/350?random=2">
-                <h3>Kraków</h3>
-                <p>Wawel • Kazimierz • Rynek</p>
-            </div>
+<div class="recent-card" onclick="location.href='city.html'">
+<img src="https://picsum.photos/600/350?2">
+<h3>Kraków</h3>
+<p>Wawel • Rynek</p>
+</div>
 
-            <div class="recent-card">
-                <img src="https://picsum.photos/600/350?random=3">
-                <h3>Gdańsk</h3>
-                <p>Motława • Długi Targ</p>
-            </div>
+<div class="recent-card" onclick="location.href='city.html'">
+<img src="https://picsum.photos/600/350?3">
+<h3>Gdańsk</h3>
+<p>Motława • Starówka</p>
+</div>
 
-        </div>
+</div>
 
-    </section>
+</section>
 
 </div>
 
