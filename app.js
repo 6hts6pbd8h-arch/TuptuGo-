@@ -142,6 +142,15 @@ window.addEventListener("load", async () => {
 // AI
 // --------------------------
 
+const selectedCityName = document.getElementById("selectedCityName");
+
+if (selectedCityName) {
+
+    selectedCityName.textContent =
+        localStorage.getItem("selectedCity") || "Nie wybrano miasta.";
+
+}
+
 const sendPrompt = document.getElementById("sendPrompt");
 
 if (sendPrompt) {
