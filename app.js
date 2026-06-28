@@ -122,16 +122,27 @@ window.addEventListener("load", async () => {
 
     if (mapElement && lat && lon && typeof L !== "undefined") {
 
-        const map = L.map("map").setView([lat, lon], 13);
+        setTimeout(() => {
 
-        L.tileLayer(
-            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-            {
-                attribution: "&copy; OpenStreetMap contributors"
-            }
-        ).addTo(map);
+    const map = L.map(mapElement).setView(
+        [parseFloat(lat), parseFloat(lon)],
+        13
+    );
 
-        L.marker([lat, lon]).addTo(map);
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            attribution: "&copy; OpenStreetMap contributors",
+            maxZoom: 19
+        }
+    ).addTo(map);
+
+    L.marker([parseFloat(lat), parseFloat(lon)])
+        .addTo(map);
+
+    map.invalidateSize();
+
+}, 200);
 
     }
 
