@@ -1,3 +1,4 @@
+alert("NOWY APP.JS");
 console.log("TuptuGo uruchomione");
 
 // START
