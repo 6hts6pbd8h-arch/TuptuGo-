@@ -1,46 +1,34 @@
+console.log("TuptuGo uruchomione");
+
 // START
 
 const startBtn = document.getElementById("startBtn");
 
 if (startBtn) {
     startBtn.onclick = () => {
-        window.location.href = "dashboard.html";
+        location.href = "dashboard.html";
     };
 }
 
-// WYBÓR MIASTA
-
-document.querySelectorAll(".city-btn").forEach(btn => {
-
-    btn.onclick = () => {
-
-        const city = btn.textContent.trim();
-
-        localStorage.setItem("selectedCity", city);
-
-        window.location.href = "city.html";
-
-    };
-
-});
-
-// WYSZUKIWARKA
+// DASHBOARD
 
 const citySearch = document.getElementById("citySearch");
 
 if (citySearch) {
 
-    citySearch.addEventListener("keydown", e => {
+    citySearch.addEventListener("keypress", function (e) {
 
         if (e.key === "Enter") {
 
             const city = citySearch.value.trim();
 
-            if(city.length>0){
+            console.log("Wybrane:", city);
+
+            if (city !== "") {
 
                 localStorage.setItem("selectedCity", city);
 
-                window.location.href = "city.html";
+                location.href = "city.html";
 
             }
 
@@ -50,14 +38,38 @@ if (citySearch) {
 
 }
 
-// CITY PAGE
+document.querySelectorAll(".city-btn").forEach(btn => {
 
-const cityTitle = document.getElementById("cityTitle");
+    btn.onclick = function () {
 
-if(cityTitle){
+        const city = btn.textContent.trim();
 
-    const city = localStorage.getItem("selectedCity") || "Warszawa";
+        localStorage.setItem("selectedCity", city);
 
-    cityTitle.textContent = city;
+        location.href = "city.html";
 
-}
+    };
+
+});
+
+// CITY
+
+window.addEventListener("load", function () {
+
+    const title = document.getElementById("cityTitle");
+
+    if (title) {
+
+        const city = localStorage.getItem("selectedCity");
+
+        console.log("Miasto z pamięci:", city);
+
+        if (city) {
+
+            title.textContent = city;
+
+        }
+
+    }
+
+});
