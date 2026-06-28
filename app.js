@@ -1,30 +1,37 @@
-// ======================
+// ==========================
 // TUPTUGO MVP
-// ======================
+// ==========================
+
+console.log("TuptuGo uruchomione");
+
+// --------------------------
+// START
+// --------------------------
 
 const startBtn = document.getElementById("startBtn");
 
 if (startBtn) {
-    startBtn.onclick = () => location.href = "dashboard.html";
+    startBtn.onclick = () => {
+        location.href = "dashboard.html";
+    };
 }
 
-// ----------------------
-// DASHBOARD
-// ----------------------
-
-const citySearch = document.getElementById("citySearch");
+// --------------------------
+// OTWIERANIE MIASTA
+// --------------------------
 
 async function openCity(city) {
 
-    if (!city) return;
+    if (!city || city.trim() === "") return;
+
+    city = city.trim();
 
     localStorage.setItem("selectedCity", city);
 
     try {
 
         const response = await fetch(
-            "https://nominatim.openstreetmap.org/search?format=json&q=" +
-            encodeURIComponent(city)
+            `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(city)}`
         );
 
         const data = await response.json();
@@ -33,16 +40,25 @@ async function openCity(city) {
 
             localStorage.setItem("lat", data[0].lat);
             localStorage.setItem("lon", data[0].lon);
+            localStorage.setItem("country", data[0].display_name);
 
         }
 
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+
+        console.error(error);
+
     }
 
     location.href = "city.html";
 
 }
+
+// --------------------------
+// DASHBOARD
+// --------------------------
+
+const citySearch = document.getElementById("citySearch");
 
 if (citySearch) {
 
@@ -50,7 +66,7 @@ if (citySearch) {
 
         if (e.key === "Enter") {
 
-            openCity(citySearch.value.trim());
+            openCity(citySearch.value);
 
         }
 
@@ -60,19 +76,19 @@ if (citySearch) {
 
 document.querySelectorAll(".city-btn").forEach(btn => {
 
-    btn.onclick = () => {
+    btn.addEventListener("click", () => {
 
-        openCity(btn.textContent.trim());
+        openCity(btn.textContent);
 
-    };
+    });
 
 });
 
-// ----------------------
-// CITY
-// ----------------------
+// --------------------------
+// CITY PAGE
+// --------------------------
 
-window.onload = async () => {
+window.addEventListener("load", async () => {
 
     const cityTitle = document.getElementById("cityTitle");
 
@@ -82,34 +98,62 @@ window.onload = async () => {
 
     cityTitle.textContent = city;
 
+    const weatherBox = document.getElementById("weather");
+    const locationInfo = document.getElementById("locationInfo");
+
     const lat = localStorage.getItem("lat");
     const lon = localStorage.getItem("lon");
+    const country = localStorage.getItem("country");
 
-    if (!lat || !lon) return;
+    if (locationInfo) {
+
+        locationInfo.innerHTML = `
+            ${country || ""}
+            <br><br>
+            🌍 ${lat || "-"}, ${lon || "-"}
+        `;
+
+    }
+
+    if (!lat || !lon || !weatherBox) return;
 
     try {
 
         const response = await fetch(
-
-            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`
-
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`
         );
 
         const weather = await response.json();
 
-        const weatherBox = document.getElementById("weather");
+        weatherBox.textContent =
+            `${weather.current.temperature_2m}°C`;
 
-        if (weatherBox) {
+    } catch (error) {
 
-            weatherBox.textContent =
-                weather.current.temperature_2m + "°C";
+        weatherBox.textContent = "Nie udało się pobrać pogody.";
 
-        }
-
-    } catch (e) {
-
-        console.log(e);
+        console.error(error);
 
     }
 
-};
+});
+
+// --------------------------
+// AI
+// --------------------------
+
+const sendPrompt = document.getElementById("sendPrompt");
+
+if (sendPrompt) {
+
+    sendPrompt.onclick = () => {
+
+        const prompt = document.getElementById("prompt").value;
+
+        if (!prompt) return;
+
+        alert("AI MVP\n\n" + prompt);
+
+    };
+
+}
