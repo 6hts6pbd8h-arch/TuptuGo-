@@ -488,3 +488,78 @@ nav a:hover{
     color:white;
 
 }
+.recent-section{
+
+margin-top:70px;
+
+}
+
+.recent-section h2{
+
+font-size:32px;
+
+margin-bottom:25px;
+
+color:#20352f;
+
+}
+
+.recent-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.recent-card{
+
+background:white;
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.25s;
+
+cursor:pointer;
+
+}
+
+.recent-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.recent-card img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.recent-card h3{
+
+padding:18px 20px 5px;
+
+font-size:28px;
+
+}
+
+.recent-card p{
+
+padding:0 20px 22px;
+
+color:#666;
+
+}
