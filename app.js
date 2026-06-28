@@ -176,3 +176,18 @@ if (promptInput) {
     });
 
 }
+// --------------------------
+// AI BUTTON
+// --------------------------
+
+const aiButton = document.querySelector(".ai-button");
+
+if (aiButton) {
+
+    aiButton.addEventListener("click", () => {
+
+        location.href = "ai.html";
+
+    });
+
+}
