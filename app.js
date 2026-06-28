@@ -191,3 +191,19 @@ if (aiButton) {
     });
 
 }
+
+// --------------------------
+// PLAN TRIP BUTTON
+// --------------------------
+
+const planTrip = document.getElementById("planTrip");
+
+if (planTrip) {
+
+    planTrip.addEventListener("click", () => {
+
+        location.href = "ai.html";
+
+    });
+
+}
