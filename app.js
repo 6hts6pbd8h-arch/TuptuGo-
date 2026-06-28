@@ -1,50 +1,63 @@
+// START
+
 const startBtn = document.getElementById("startBtn");
 
-if(startBtn){
-
-    startBtn.onclick=()=>{
-
-        location.href="dashboard.html";
-
-    }
-
+if (startBtn) {
+    startBtn.onclick = () => {
+        window.location.href = "dashboard.html";
+    };
 }
 
-document.querySelectorAll(".city-btn").forEach(btn=>{
+// WYBÓR MIASTA
 
-    btn.onclick=()=>{
+document.querySelectorAll(".city-btn").forEach(btn => {
 
-        location.href="city.html";
+    btn.onclick = () => {
 
-    }
+        const city = btn.textContent.trim();
+
+        localStorage.setItem("selectedCity", city);
+
+        window.location.href = "city.html";
+
+    };
 
 });
 
-const citySearch=document.getElementById("citySearch");
+// WYSZUKIWARKA
 
-if(citySearch){
+const citySearch = document.getElementById("citySearch");
 
-citySearch.addEventListener("keydown",e=>{
+if (citySearch) {
 
-if(e.key==="Enter"){
+    citySearch.addEventListener("keydown", e => {
 
-location.href="city.html";
+        if (e.key === "Enter") {
+
+            const city = citySearch.value.trim();
+
+            if(city.length>0){
+
+                localStorage.setItem("selectedCity", city);
+
+                window.location.href = "city.html";
+
+            }
+
+        }
+
+    });
 
 }
 
-});
+// CITY PAGE
 
-}
-const sendPrompt=document.getElementById("sendPrompt");
+const cityTitle = document.getElementById("cityTitle");
 
-if(sendPrompt){
+if(cityTitle){
 
-sendPrompt.onclick=()=>{
+    const city = localStorage.getItem("selectedCity") || "Warszawa";
 
-const prompt=document.getElementById("prompt").value;
-
-alert("AI otrzymało:\n\n"+prompt);
-
-}
+    cityTitle.textContent = city;
 
 }
