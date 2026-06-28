@@ -104,7 +104,13 @@ window.addEventListener("load", async () => {
 
     const weatherBox = document.getElementById("weather");
     const locationInfo = document.getElementById("locationInfo");
-    const mapElement = document.getElementById("map");
+    if (mapElement && lat && lon && typeof L !== "undefined") {
+
+    console.log("MAP START");
+    console.log(mapElement);
+    console.log(lat, lon);
+
+    try {
 
     const lat = localStorage.getItem("lat");
     const lon = localStorage.getItem("lon");
@@ -144,6 +150,10 @@ window.addEventListener("load", async () => {
 
 }, 200);
 
+    }
+
+        } catch(e) {
+        console.error("MAP ERROR", e);
     }
 
     if (!lat || !lon || !weatherBox) return;
